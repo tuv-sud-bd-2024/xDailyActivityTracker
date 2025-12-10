@@ -1,0 +1,21 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Admin - Clients</title>
+  </head>
+  <body>
+    <h1>Clients</h1>
+    <ul>
+      {% for c in clients %}
+      <li>{{ c.name }} - {{ c.external_id or '' }}</li>
+      {% endfor %}
+    </ul>
+    <h2>Create</h2>
+    <form action="/admin/clients/create" method="post">
+      <input name="name" placeholder="Client name" />
+      <input name="external_id" placeholder="Client-ID" />
+      <button type="submit">Create</button>
+    </form>
+  </body>
+</html>

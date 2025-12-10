@@ -1,0 +1,21 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Admin - Staff</title>
+  </head>
+  <body>
+    <h1>Staff</h1>
+    <ul>
+      {% for s in staff %}
+      <li>{{ s.code }} - {{ s.name }}</li>
+      {% endfor %}
+    </ul>
+    <h2>Create</h2>
+    <form action="/admin/staff/create" method="post">
+      <input name="code" placeholder="Staff-01" />
+      <input name="name" placeholder="Full name" />
+      <button type="submit">Create</button>
+    </form>
+  </body>
+</html>

@@ -1,0 +1,21 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Admin - Deals</title>
+  </head>
+  <body>
+    <h1>Deals</h1>
+    <ul>
+      {% for d in deals %}
+      <li>{{ d.name }} - {{ d.client_id or '' }} - {{ d.status }}</li>
+      {% endfor %}
+    </ul>
+    <h2>Create</h2>
+    <form action="/admin/deals/create" method="post">
+      <input name="name" placeholder="Deal name" />
+      <input name="client_id" placeholder="Client ID (UUID)" />
+      <button type="submit">Create</button>
+    </form>
+  </body>
+</html>
